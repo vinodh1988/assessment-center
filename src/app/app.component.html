@@ -1,0 +1,18 @@
+<div class="container">
+    <header>
+      <h1>{{ title }}</h1>
+      <nav>
+        <ul>
+          <li><a routerLink="/">Upload</a></li>
+          <li><a routerLink="/create-assessment">Create Assessment</a></li>
+          <li><a routerLink="/test-results">Results </a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <!-- The router-outlet directive acts as a placeholder where the routed component will be displayed -->
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  

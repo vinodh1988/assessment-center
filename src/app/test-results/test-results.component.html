@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Assessment Center - Test Results</h1>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Assessment Name</th>
+          <th>Duration (mins)</th>
+          <th>Number of Questions</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let assessment of assessments">
+          <td>{{ assessment.assessmentName }}</td>
+          <td>{{ assessment.duration }}</td>
+          <td>{{ assessment.numberOfQuestions }}</td>
+          <td>
+            <button class="view-btn" (click)="viewTestReport(assessment.assessmentcode)">View Results</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/" class="back-home-link">Back to Home</a>
+  </div>
+  

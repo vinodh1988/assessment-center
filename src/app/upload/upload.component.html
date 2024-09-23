@@ -1,0 +1,13 @@
+<div class="upload-container">
+  <h1>Assessment Center - Upload Questions</h1>
+  <input type="file" (change)="onFileSelected($event)" />
+  <button mat-raised-button color="primary" (click)="onUpload()" [disabled]="loading || !selectedFile">Upload</button>
+  
+  <!-- Display spinner while uploading -->
+  <mat-spinner *ngIf="loading" diameter="40"></mat-spinner>
+  
+  <p *ngIf="error" class="error-message">Error uploading file. Please try again.</p>
+  
+  <!-- Link to home -->
+  <a routerLink="/" class="back-home-link">Back to Home</a>
+</div>

@@ -1,0 +1,14 @@
+.upload-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  mat-spinner {
+    margin-top: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

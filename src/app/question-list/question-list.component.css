@@ -1,0 +1,20 @@
+.container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
+  .mat-card {
+    margin-bottom: 20px;
+  }
+  
+  .back-home-link {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  

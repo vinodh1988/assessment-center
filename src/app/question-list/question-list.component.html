@@ -1,0 +1,13 @@
+<mat-card *ngFor="let question of questions">
+    <h3>{{question.questionno}}</h3>
+    <h3>{{ question.question }}</h3>
+    <ul>
+      <li *ngFor="let option of question.options">{{ option }}</li>
+    </ul>
+    <p><strong>Answer:</strong> {{ question.answer }}</p>
+    <mat-divider></mat-divider>
+  </mat-card>
+  
+  <button mat-raised-button color="primary" (click)="openConfirmDialog()">
+    Confirm
+  </button>
