@@ -6,7 +6,8 @@
           <th>Assessment Name</th>
           <th>Duration (mins)</th>
           <th>Number of Questions</th>
-          <th>Actions</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +17,9 @@
           <td>{{ assessment.numberOfQuestions }}</td>
           <td>
             <button class="view-btn" (click)="viewTestReport(assessment.assessmentcode)">View Results</button>
+          </td>
+          <td>
+            <button class="view-btn" (click)="viewLocks(assessment.assessmentcode)">Locked Assessments</button>
           </td>
         </tr>
       </tbody>

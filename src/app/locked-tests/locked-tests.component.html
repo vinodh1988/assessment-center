@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h1>Test Results for Assessment Code: {{ assessmentCode }}</h1>
+ 
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>currentDuration</th>
+          <th>Unlock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of testResults">
+          <td>{{ result.name }}</td>
+          <td>{{ result.email }}</td>
+          <td>{{  math.round(result.currentDuration) }}</td>
+          <td>
+            <button class="view-btn" (click)="unlockTest(result.assessmentcode,result.email)">UnlockTest</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/test-results" class="back-home-link">Back to Test Results</a>
+  </div>
+  

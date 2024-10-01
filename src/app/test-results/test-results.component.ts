@@ -29,4 +29,8 @@ export class TestResultsComponent implements OnInit {
   viewTestReport(assessmentCode: string): void {
     this.router.navigate([`/test-results/${assessmentCode}`]);
   }
+  
+  viewLocks(assessmentCode: string):void {
+    this.router.navigate([`/test-locks/${assessmentCode}`]);
+  }
 }

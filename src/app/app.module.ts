@@ -15,6 +15,7 @@ import { TestReportComponent } from './test-report/test-report.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Import this module
 import { AssessmentFormComponent } from './assessment-form/assessment-form.component';
 import { AssessmentSuccessComponent } from './components/assessment-success/assessment-success.component';
+import { LockedTestsComponent } from './locked-tests/locked-tests.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AssessmentSuccessComponent } from './components/assessment-success/asse
     TestResultsComponent,
     TestReportComponent,
     AssessmentSuccessComponent,
+    LockedTestsComponent,
    
   ],
   imports: [

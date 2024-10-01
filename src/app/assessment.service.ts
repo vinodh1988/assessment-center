@@ -36,9 +36,16 @@ export class AssessmentService {
     return this.http.get<any[]>(`${this.baseUrl}/assessments/evaluate`, {
       params: { assessmentCode },
     });
-
- 
   }
+    getLockedAssessments(assessmentCode: string): Observable<any> {
+      const url = `${this.baseUrl}/lockedstatus?assessmentCode=${assessmentCode}`;
+      return this.http.get(`${url}`);
+    }
+ 
+    unlockTest(assessmentCode:string,email: string): Observable<any>  {
+      return this.http.post(`${this.baseUrl}/assessment/unlock`,{assessmentCode:assessmentCode,email:email});
+    }
+  
 
   
   downloadExcel(data: any): Observable<Blob> {
