@@ -50,7 +50,7 @@ export class QuestionListComponent {
 
     console.log(payload)
     // Perform the HTTP POST request to the backend API
-    this.http.post('http://localhost:5000/questionsupload', payload).subscribe(
+    this.http.post('http://15.207.18.117:5000/questionsupload', payload).subscribe(
       (response) => {
         // Show success snackbar notification
         this.snackBar.open('Questions uploaded successfully!', 'Close', {
