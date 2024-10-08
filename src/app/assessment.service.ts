@@ -46,8 +46,35 @@ export class AssessmentService {
       return this.http.post(`${this.baseUrl}/assessment/unlock`,{assessmentCode:assessmentCode,email:email});
     }
   
+   
+  
+    // Fetch questions for a specific question bank
+    fetchQuestions(questionBankName: string): Observable<any[]> {
+      return this.http.get<any[]>(`${this.baseUrl}/questionslist`, { params: { questionBankName } });
+    }
 
   
+    updateOrAddQuestion(questionBankName: string, question: any): Observable<any> {
+      const payload = { questionBankName, question };
+      return this.http.put(`${this.baseUrl}/question`, payload);
+    }
+
+    getStatus(assessmentCode: string, email: string): Observable<any> {
+      return this.http.get(`${this.baseUrl}/assessments/status?assessmentcode=${assessmentCode}&email=${email}`);
+    }
+  
+
+    // Fetch test details by assessmentCode
+  getTestDetails(assessmentCode: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/testdetails/${assessmentCode}`);
+  }
+
+  // Fetch correct answers by questionBankName and array of question numbers
+  fetchCorrectAnswers(questionBankName: string, questionnos: number[]): Observable<any[]> {
+    const payload = { questionBankName, questionnos };
+    return this.http.post<any[]>(`${this.baseUrl}/questions`, payload);
+  }
+
   downloadExcel(data: any): Observable<Blob> {
     const url = `${this.baseUrl}/downloadExcel`;
     const headers = new HttpHeaders({

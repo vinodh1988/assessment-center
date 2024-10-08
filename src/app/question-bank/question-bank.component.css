@@ -1,0 +1,46 @@
+.container {
+    margin: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .question-bank-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .question-bank-table th, .question-bank-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .question-bank-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .question-bank-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .question-bank-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

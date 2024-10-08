@@ -1,18 +1,23 @@
 <div class="container">
-    <header>
-      <h1>{{ title }}</h1>
-      <nav>
-        <ul>
-          <li><a routerLink="/">Upload</a></li>
-          <li><a routerLink="/create-assessment">Create Assessment</a></li>
-          <li><a routerLink="/test-results">Results </a></li>
-        </ul>
-      </nav>
-    </header>
-  
-    <!-- The router-outlet directive acts as a placeholder where the routed component will be displayed -->
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  </div>
-  
+  <header>
+    <!-- Logo at the top -->
+    <div class="logo-container">
+      <img src="assets/digiterati.png" alt="Digiterati Logo" class="logo">
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav>
+      <ul class="menu">
+        <li><a routerLink="/">Upload</a></li>
+        <li><a routerLink="/create-assessment">Create Assessment</a></li>
+        <li><a routerLink="/test-results">Results</a></li>
+        <li><a routerLink="/question-banks">Question Banks</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Router outlet for dynamic content -->
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

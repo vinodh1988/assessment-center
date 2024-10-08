@@ -6,6 +6,8 @@ import { AssessmentFormComponent } from './assessment-form/assessment-form.compo
 import { TestResultsComponent } from './test-results/test-results.component';
 import { TestReportComponent } from './test-report/test-report.component';
 import { LockedTestsComponent } from './locked-tests/locked-tests.component';
+import { QuestionBankComponent } from './question-bank/question-bank.component';
+import { QuestionBankQuestionsComponent } from './question-bank-questions/question-bank-questions.component';
 
 const routes: Routes = [
   { path: '', component: UploadComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'test-results', component: TestResultsComponent },
   { path: 'test-locks/:assessmentCode', component: LockedTestsComponent},
   { path: 'test-results/:assessmentCode', component: TestReportComponent },
+  { path: 'question-banks', component: QuestionBankComponent },
+  { path: 'question-bank-questions', component: QuestionBankQuestionsComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

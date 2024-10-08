@@ -17,6 +17,9 @@ import { AssessmentFormComponent } from './assessment-form/assessment-form.compo
 import { AssessmentSuccessComponent } from './components/assessment-success/assessment-success.component';
 import { LockedTestsComponent } from './locked-tests/locked-tests.component';
 import { EditQuestionModalComponent } from './edit-question-modal/edit-question-modal.component';
+import { SimpleConfirmDialogComponent } from './simple-confirm-dialog/simple-confirm-dialog.component';
+import { QuestionBankComponent } from './question-bank/question-bank.component';
+import { QuestionBankQuestionsComponent } from './question-bank-questions/question-bank-questions.component';
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import { EditQuestionModalComponent } from './edit-question-modal/edit-question-
     AssessmentSuccessComponent,
     LockedTestsComponent,
     EditQuestionModalComponent,
+    SimpleConfirmDialogComponent,
+    QuestionBankComponent,
+    QuestionBankQuestionsComponent,
    
   ],
   imports: [

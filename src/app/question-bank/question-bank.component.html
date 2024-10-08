@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Question Banks</h1>
+    
+    <!-- Table to display the list of question banks -->
+    <table class="question-bank-table">
+      <thead>
+        <tr>
+          <th>Question Bank Name</th>
+          <th>Number of Questions</th>
+          <th>Link to Questions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bank of questionBanks">
+          <td>{{ bank.questionbankname }}</td>
+          <td>{{ bank.noq }}</td>
+          <!-- Link to navigate to the questions list -->
+          <td><a [routerLink]="['/question-bank-questions']" [queryParams]="{ questionBankName: bank.questionbankname }">View Questions</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

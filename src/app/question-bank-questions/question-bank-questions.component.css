@@ -1,0 +1,54 @@
+.container {
+    margin: 20px;
+  }
+  
+  .question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .edit-icon {
+    cursor: pointer;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Flex container for the new question button */
+  .add-question-container {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 20px;
+    background-color: rgb(13, 13, 65);
+    padding: 10px;
+    box-shadow: 5px 5px 5px lightblue;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  
+  .add-question-container:hover .add-question-text {
+    color: lightblue;
+  }
+  
+  .add-question-container:hover .add-question-icon {
+    color: lightblue;
+  }
+  
+  .add-question-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .add-question-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: lightblue;
+  }
+  

@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>{{ questionBankName }} - Questions</h1>
+  
+    <div class="add-question-container" (click)="addQuestion()">
+        <mat-icon class="add-question-icon">add_circle_outline</mat-icon>
+        <span class="add-question-text">New Question</span>
+    </div>
+    <!-- Display each question -->
+    <mat-card *ngFor="let question of paginatedQuestions">
+      <div class="question-header">
+        <h3>Question {{ question.questionno }}</h3>
+        <button mat-icon-button class="edit-icon" (click)="editQuestion(question)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+      
+      <!-- Use [innerHTML] to display sanitized question content -->
+      <p [innerHTML]="question.question"></p>
+  
+      <ul>
+        <li *ngFor="let option of question.options" [innerHTML]="option"></li>
+      </ul>
+  
+      <p><strong>Answer:</strong> {{ question.answer.join(', ') }}</p>
+      <mat-divider></mat-divider>
+    </mat-card>
+  
+    <!-- Pagination controls -->
+    <div class="pagination">
+      <button mat-button [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">Previous</button>
+      <button mat-button [disabled]="currentPage * pageSize >= questions.length" (click)="onPageChange(currentPage + 1)">Next</button>
+    </div>
+  </div>
+  

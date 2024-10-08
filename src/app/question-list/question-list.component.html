@@ -23,6 +23,18 @@
     <mat-divider></mat-divider>
   </mat-card>
 
+  <!-- Show the dropdown to select an existing question bank if uploading to an existing bank -->
+  <div *ngIf="uploadToExisting">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Existing Question Bank</mat-label>
+      <mat-select [(ngModel)]="questionBankName" required>
+        <mat-option *ngFor="let bank of availableBanks" [value]="bank.questionbankname">
+          {{ bank.questionbankname }} ({{ bank.noq }} questions)
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
   <!-- Confirm Button for Uploading Questions -->
-  <button mat-raised-button color="primary" (click)="openConfirmDialog()">Confirm</button>
+  <button mat-raised-button color="primary" (click)="openConfirmDialog()" [disabled]="!questionBankName && uploadToExisting">Confirm</button>
 </div>
