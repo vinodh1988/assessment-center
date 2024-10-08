@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; /
 import { AssessmentFormComponent } from './assessment-form/assessment-form.component';
 import { AssessmentSuccessComponent } from './components/assessment-success/assessment-success.component';
 import { LockedTestsComponent } from './locked-tests/locked-tests.component';
+import { EditQuestionModalComponent } from './edit-question-modal/edit-question-modal.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { LockedTestsComponent } from './locked-tests/locked-tests.component';
     TestReportComponent,
     AssessmentSuccessComponent,
     LockedTestsComponent,
+    EditQuestionModalComponent,
    
   ],
   imports: [

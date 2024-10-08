@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Edit Question {{ question.questionno }}</h2>
+<mat-dialog-content class="dialog-content">
+  <form>
+    <!-- Text Area for Question -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Question</mat-label>
+      <textarea matInput [(ngModel)]="question.question" name="question" rows="5"></textarea>
+    </mat-form-field>
+
+    <!-- Options List -->
+    <label>Options</label>
+    <div *ngFor="let option of question.options; let i = index; trackBy: trackByIndex" class="option-field">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Option {{ getOptionLabel(i) }}</mat-label>
+        <input matInput [(ngModel)]="question.options[i]" name="option-{{i}}" />
+      </mat-form-field>
+
+      <!-- Delete Option Button -->
+      <button mat-icon-button color="warn" (click)="deleteOption(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+    <!-- Add New Option Button -->
+    <button mat-raised-button (click)="addOption()" color="primary" class="add-option-btn">
+      Add Option
+    </button>
+
+    <!-- Answer Selection (Checkboxes for multiple answers) -->
+    <label>Select the correct answer(s):</label>
+    <div *ngFor="let option of question.options; let i = index; trackBy: trackByIndex" class="answer-field">
+      <mat-checkbox [(ngModel)]="correctAnswers[i]" (change)="toggleCorrectAnswer(i, $event.checked)">
+        {{ getOptionLabel(i) }} - {{ option }}
+      </mat-checkbox>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions style="align-items: end;">
+  <!-- Save and Cancel Buttons -->
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+  <button mat-raised-button color="warn" (click)="close()">Cancel</button>
+</mat-dialog-actions>

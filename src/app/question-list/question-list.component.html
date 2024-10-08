@@ -1,13 +1,28 @@
-<mat-card *ngFor="let question of questions">
-    <h3>{{question.questionno}}</h3>
-    <h3>{{ question.question }}</h3>
-    <ul>
-      <li *ngFor="let option of question.options">{{ option }}</li>
+<div class="container">
+  <mat-card *ngFor="let question of questions; let i = index" class="question-card">
+    <!-- Header with Question Number and Edit Icon -->
+    <div class="question-header">
+      <h3 class="question-number">{{ question.questionno }}</h3>
+      <button mat-icon-button class="edit-icon" (click)="editQuestion(i)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+    <!-- Question Text -->
+    <h3 [innerHTML]="escapeHTMLTags(question.question)" class="question-text"></h3>
+
+    <!-- Options -->
+    <ul class="options-list">
+      <li *ngFor="let option of question.options" [innerHTML]="escapeHTMLTags(option)"></li>
     </ul>
-    <p><strong>Answer:</strong> {{ question.answer }}</p>
+
+    <!-- Answer Display -->
+    <p class="answer-text"><strong>Answer:</strong> {{ question.answer.join(', ') }}</p>
+    
+    <!-- Divider -->
     <mat-divider></mat-divider>
   </mat-card>
-  
-  <button mat-raised-button color="primary" (click)="openConfirmDialog()">
-    Confirm
-  </button>
+
+  <!-- Confirm Button for Uploading Questions -->
+  <button mat-raised-button color="primary" (click)="openConfirmDialog()">Confirm</button>
+</div>

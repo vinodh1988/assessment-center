@@ -21,6 +21,6 @@ export class ConfirmDialogComponent {
 
   // Submit the form
   onSubmit(): void {
-    this.dialogRef.close(this.questionBankName); // Pass back the questionBankName to the parent component
+    this.dialogRef.close({questionBankName:this.questionBankName}); // Pass back the questionBankName to the parent component
   }
 }

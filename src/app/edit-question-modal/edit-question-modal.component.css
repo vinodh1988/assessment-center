@@ -1,0 +1,32 @@
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .option-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .answer-field {
+    margin-top: 10px;
+  }
+  
+  .add-option-btn {
+    margin-top: 10px;
+  }
+  
+  mat-dialog-actions {
+    margin-top: 20px;
+  }
+  
+  mat-icon {
+    cursor: pointer;
+  }
+  

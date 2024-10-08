@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AssessmentService {
-  private baseUrl = 'http://15.207.18.117:5000'; // Update this URL according to your backend server configuration
+  private baseUrl = 'http://localhost:5000'; // Update this URL according to your backend server configuration
 
   constructor(private http: HttpClient) {}
 
