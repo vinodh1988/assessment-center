@@ -1,59 +1,109 @@
-/* Main container styling */
+/* General container styling */
 .container {
-    width: 100%;
-    margin-top: 0px;
-    margin-left: 14%;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Logo container styling */
-  .logo-container {
-    text-align: center;
-    padding: 10px;
-  }
-  
-  /* Logo image styling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+/* Logo styling */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+
+}
+
+/* Navigation Menu styling */
+nav {
+  background-color: #2b343e; /* Dark blue */
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 0 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #ffc107; /* Yellow hover effect */
+}
+
+/* Main content styling */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  /* Adjust logo size for smaller screens */
   .logo {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
+    max-width: 120px;
   }
-  
-  /* Navigation bar styling */
-  nav {
-    background-color: rgb(21, 21, 67);
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-  }
-  
+
+  /* Stack menu items vertically on smaller screens */
   .menu {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .menu li {
-    margin: 0 20px;
+    margin: 10px 0; /* Add vertical margin between menu items */
   }
-  
-  .menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
+
+  /* Adjust font sizes for smaller screens */
+  .menu li a {
+    font-size: 14px;
   }
-  
-  /* Hover effect for links */
-  .menu a:hover {
-    color: lightblue;
-  }
-  
-  /* Main content area styling */
+
+  /* Adjust padding for main content on smaller screens */
   main {
     padding: 20px;
   }
-  
+}
+
+/* Media Query for Extra Small Screens (Mobile Phones) */
+@media (max-width: 480px) {
+  /* Further reduce logo size */
+  .logo {
+    max-width: 100px;
+  }
+
+  /* Adjust font sizes for smaller devices */
+  .menu li a {
+    font-size: 12px;
+  }
+
+  /* Adjust padding for main content on smaller devices */
+  main {
+    padding: 15px;
+  }
+}

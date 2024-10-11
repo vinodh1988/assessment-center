@@ -75,6 +75,17 @@ export class AssessmentService {
     return this.http.post<any[]>(`${this.baseUrl}/questions`, payload);
   }
 
+  createSingleBankAssessment(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/create-assessment-single-bank`, data);
+  }
+
+  createMultiBankAssessment(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/create-assessment-multi-bank`, data);
+  }
+  
+  createMultiBankCombinedAssessment(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/create-full-combined-assessment`, data);
+  }
   downloadExcel(data: any): Observable<Blob> {
     const url = `${this.baseUrl}/downloadExcel`;
     const headers = new HttpHeaders({
@@ -85,6 +96,19 @@ export class AssessmentService {
     return this.http.post(url, data, {
       headers: headers,
       responseType: 'blob' // The response type is set to 'blob' to handle binary data
+    });
+  }
+
+  downloadPDF(data: { html: string }): Observable<Blob> {
+    const url = `${this.baseUrl}/generate-pdf`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+  
+    return this.http.post(url, data, {
+      headers: headers,
+      responseType: 'blob' // Expect binary file (PDF)
     });
   }
 }

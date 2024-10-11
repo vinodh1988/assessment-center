@@ -1,0 +1,61 @@
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h4 {
+ 
+    margin-bottom: 20px;
+    color: #fafbfe; /* A cool blue shade */
+    margin-bottom: 40px;
+    background-color: rgb(10, 5, 37);
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design for mobile */
+  @media (max-width: 600px) {
+    .login-container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    h2 {
+      font-size: 18px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  

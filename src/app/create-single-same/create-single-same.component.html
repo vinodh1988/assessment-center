@@ -1,0 +1,49 @@
+<div class="container">
+    <form [formGroup]="assessmentForm" (ngSubmit)="onSubmit()" class="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Assessment Name</mat-label>
+        <input matInput formControlName="assessmentName" required />
+        <mat-error *ngIf="assessmentForm.get('assessmentName')?.invalid">Assessment name is required</mat-error>
+      </mat-form-field>
+      <br />
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Duration (in minutes)</mat-label>
+        <input matInput type="number" formControlName="duration" required />
+        <mat-error *ngIf="assessmentForm.get('duration')?.invalid">Please enter a valid duration</mat-error>
+      </mat-form-field>
+      <br />
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Question Bank</mat-label>
+        <mat-select formControlName="questionbankname" required>
+          <mat-option *ngFor="let bank of questionBanks" [value]="bank.questionbankname">
+            {{ bank.questionbankname }} ({{ bank.noq }} questions)
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="assessmentForm.get('questionbanknames')?.invalid">Please select a question bank</mat-error>
+      </mat-form-field>
+      <br />
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Number of Questions</mat-label>
+        <input matInput type="number" formControlName="numberOfQuestions" required />
+        <mat-hint>Total available questions: {{ selectedBankNoq }}</mat-hint>
+        <mat-error *ngIf="assessmentForm.get('numberOfQuestions')?.invalid">
+          Please enter a valid number of questions
+        </mat-error>
+      </mat-form-field>
+      <br />
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="assessmentForm.invalid">Create Assessment</button>
+    </form>
+  
+    <!-- Display the assessment link if available -->
+    <div *ngIf="submitMessage" class="submit-message">
+      <p>The assessment link is: <a [href]="submitMessage" target="_blank">{{ submitMessage }}</a></p>
+    </div>
+  
+    <!-- Link back to the home page -->
+    <a routerLink="/" class="back-home-link">Back to Home</a>
+  </div>
+  

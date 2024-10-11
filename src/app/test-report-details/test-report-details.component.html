@@ -1,0 +1,30 @@
+<div class="pdf-download-container">
+  <button (click)="downloadPDF()" class="view-btn">Download as PDF</button>
+</div>
+
+<div class="container">
+  <h1>Test Report Details for {{ name }}</h1>
+
+  <div *ngFor="let question of questions; let i = index">
+    <div class="question-container">
+      <p><strong>Question {{ i+1 }}:</strong> {{ question.question }}</p>
+
+      <ul class="options-list">
+        <li *ngFor="let option of question.options; let optIndex = index" 
+            [ngClass]="{
+              'correct-answer': correctAnswers[i].includes(optionLetters[i][optIndex]) && answers[i].includes(optionLetters[i][optIndex]),
+              'wrong-answer': !correctAnswers[i].includes(optionLetters[i][optIndex]) && answers[i].includes(optionLetters[i][optIndex]),
+              'right-answer': correctAnswers[i].includes(optionLetters[i][optIndex])
+            }">
+          {{ option }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  
+</div>
+
+<h3 style="text-align: center;">
+  <a routerLink="/test-results" class="back-home-link">Back to Test Results</a>
+<h3>

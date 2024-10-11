@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { UploadComponent } from './upload/upload.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,16 @@ import { EditQuestionModalComponent } from './edit-question-modal/edit-question-
 import { SimpleConfirmDialogComponent } from './simple-confirm-dialog/simple-confirm-dialog.component';
 import { QuestionBankComponent } from './question-bank/question-bank.component';
 import { QuestionBankQuestionsComponent } from './question-bank-questions/question-bank-questions.component';
+import { TestReportDetailsComponent } from './test-report-details/test-report-details.component';
+import { CreateSingleRandomComponent } from './create-single-random/create-single-random.component';
+import { CreateSingleSameComponent } from './create-single-same/create-single-same.component';
+import { CreateMultiRandomComponent } from './create-multi-random/create-multi-random.component';
+import { CreateMultiSameComponent } from './create-multi-same/create-multi-same.component';
+import { AssessmentsDashboardComponent } from './assessments-dashboard/assessments-dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AuthInterceptor } from './auth-interceptor.interceptor';
+import { QuestionBankDashboardComponent } from './question-bank-dashboard/question-bank-dashboard.component';
 
 
 @NgModule({
@@ -37,6 +47,15 @@ import { QuestionBankQuestionsComponent } from './question-bank-questions/questi
     SimpleConfirmDialogComponent,
     QuestionBankComponent,
     QuestionBankQuestionsComponent,
+    TestReportDetailsComponent,
+    CreateSingleRandomComponent,
+    CreateSingleSameComponent,
+    CreateMultiRandomComponent,
+    CreateMultiSameComponent,
+    AssessmentsDashboardComponent,
+    HomeComponent,
+    LoginComponent,
+    QuestionBankDashboardComponent
    
   ],
   imports: [
@@ -48,9 +67,12 @@ import { QuestionBankQuestionsComponent } from './question-bank-questions/questi
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
-   
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

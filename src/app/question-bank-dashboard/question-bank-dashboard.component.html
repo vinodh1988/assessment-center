@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+    <h1>Question Bank Dashboard</h1>
+    <p>Manage, view, and upload new question banks easily.</p>
+  
+    <!-- Search and Filter Bar -->
+    <div class="search-filter-container">
+      <input type="text" placeholder="Search Question Banks..." class="search-bar">
+      <button class="filter-button">
+        <mat-icon>filter_list</mat-icon> Filter
+      </button>
+    </div>
+  
+    <!-- Top 10 Question Banks (Display as cards) -->
+    <div class="question-bank-grid">
+      <div class="question-bank-card" *ngFor="let bank of QuestionBanks">
+        <mat-icon>description</mat-icon>
+        <h3>{{ bank.questionbankname }}</h3>
+        <p>{{ bank.noq }} Questions</p>
+        <a [routerLink]="['/question-bank-questions']" [queryParams]="{ questionBankName: bank.questionbankname }">View Details</a>
+      </div>
+    </div>
+  
+    <!-- Add New Question Bank FAB Button -->
+    <button class="fab-button" routerLink="/question-bank-upload">
+      <mat-icon>add</mat-icon> Add New Question Bank
+    </button>
+  
+    <!-- Statistics Section -->
+    <div class="stats-section">
+      <h3>Total Question Banks: {{ totalQuestionBanks }}</h3>
+      <h3>Total Questions: {{ totalQuestions }}</h3>
+    </div>
+  </div>
+  

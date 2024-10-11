@@ -6,10 +6,10 @@
     </div>
 
     <!-- Navigation Menu -->
-    <nav>
+    <nav *ngIf="showNav">
       <ul class="menu">
         <li><a routerLink="/">Upload</a></li>
-        <li><a routerLink="/create-assessment">Create Assessment</a></li>
+        <li><a routerLink="/assessment">Assessments</a></li>
         <li><a routerLink="/test-results">Results</a></li>
         <li><a routerLink="/question-banks">Question Banks</a></li>
       </ul>
