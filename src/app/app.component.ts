@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,18 @@ export class AppComponent {
 
   showNav = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private login:LoginService) {
+  
     // Subscribe to route changes
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        // Hide nav if the current route is '/login'
-        this.showNav = !(event.url === '/login');
-      }
-    });
+    this.login.event$.subscribe(
+       (data:boolean) => this.showNav=data
+   
+    )
+    this.login.getStatus()
+  }
+  onSignOut() {
+     sessionStorage.clear()
+     this.router.navigate([""])
+     location.reload()
   }
 }

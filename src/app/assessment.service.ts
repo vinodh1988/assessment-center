@@ -99,6 +99,7 @@ export class AssessmentService {
     });
   }
 
+
   downloadPDF(data: { html: string }): Observable<Blob> {
     const url = `${this.baseUrl}/generate-pdf`;
     const headers = new HttpHeaders({
@@ -111,4 +112,19 @@ export class AssessmentService {
       responseType: 'blob' // Expect binary file (PDF)
     });
   }
+
+  downloadBatchPDF(data: { html: string }): Observable<Blob> {
+    const url = `${this.baseUrl}/generate-batch-pdf`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+  
+    return this.http.post(url, data, {
+      headers: headers,
+      responseType: 'blob' // Expect binary file (PDF)
+    });
+  }
+
+  
 }

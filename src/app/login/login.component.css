@@ -1,61 +1,94 @@
 .login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h4 {
+  margin-bottom: 20px;
+  color: #525254;
+  margin-bottom: 40px;
+  text-decoration: underline;
+  padding: 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #f3f4f6; /* Subtle light background for the input */
+  border-radius: 5px;
+  padding: 0 5px; /* Slim padding for smaller height */
+  border: 1px solid #ccc; /* Light border */
+}
+
+.mat-form-field-appearance-fill .mat-input-element {
+  padding: 4px 0; /* Slimmer padding inside the input for smaller height */
+  font-size: 14px; /* Smaller font size for compact input */
+  height: 30px; /* Reduce the input field height */
+  color: #333;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-label {
+  color: #888;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #2196f3;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline {
+  display: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #240a3a !important;
+  color: white !important;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+
+button:hover {
+  background-color: #45a049 !important;
+}
+
+button:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 20px;
   }
-  
+
   h4 {
- 
-    margin-bottom: 20px;
-    color: #fafbfe; /* A cool blue shade */
-    margin-bottom: 40px;
-    background-color: rgb(10, 5, 37);
-    padding: 10px;
+    font-size: 18px;
   }
-  
-  h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
+
   button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  .error-message {
-    color: red;
     font-size: 14px;
-    margin-top: 10px;
   }
-  
-  /* Responsive Design for mobile */
-  @media (max-width: 600px) {
-    .login-container {
-      padding: 20px;
-    }
-  
-    h1 {
-      font-size: 20px;
-    }
-  
-    h2 {
-      font-size: 18px;
-    }
-  
-    button {
-      font-size: 14px;
-    }
-  }
-  
+}

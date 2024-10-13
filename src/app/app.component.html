@@ -1,20 +1,26 @@
 <div class="container">
   <header>
-    <!-- Logo at the top -->
     <div class="logo-container">
       <img src="assets/digiterati.png" alt="Digiterati Logo" class="logo">
     </div>
-
-    <!-- Navigation Menu -->
+  
     <nav *ngIf="showNav">
       <ul class="menu">
-        <li><a routerLink="/">Upload</a></li>
-        <li><a routerLink="/assessment">Assessments</a></li>
-        <li><a routerLink="/test-results">Results</a></li>
-        <li><a routerLink="/question-banks">Question Banks</a></li>
+        <li><a routerLink="/"><span class="icon">🏠</span> Home</a></li>
+        <li><a routerLink="/assessment"><span class="icon">📝</span> Assessments</a></li>
+        <li><a routerLink="/assessment-results-dashboard"><span class="icon">📊</span> Results</a></li>
+        <li><a routerLink="/question-banks-home"><span class="icon">📚</span> Question Banks</a></li>
       </ul>
     </nav>
+  
+    <!-- Sign-out button -->
+    <div class="signout-container" *ngIf="showNav">
+      <button class="signout-button" (click)="onSignOut()">
+        <span class="signout-icon">🔓</span> Sign Out
+      </button>
+    </div>
   </header>
+  
 
   <!-- Router outlet for dynamic content -->
   <main>

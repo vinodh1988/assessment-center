@@ -6,6 +6,7 @@
   padding: 20px;
   min-height: 100vh;
   background-color: #f5f7fa;
+  position: relative;
 }
 
 /* Logo styling */
@@ -105,5 +106,43 @@ main {
   /* Adjust padding for main content on smaller devices */
   main {
     padding: 15px;
+  }
+}
+
+/* Sign-out button styling */
+.signout-container {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+.signout-button {
+  background-color: #f5f7fa;
+  color: rgb(12, 12, 46);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.signout-button:hover {
+  background-color: #ffc107; /* Yellow hover effect */
+}
+
+.signout-icon {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .signout-button {
+    font-size: 12px;
+    padding: 6px 10px;
   }
 }

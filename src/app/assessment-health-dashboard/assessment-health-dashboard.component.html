@@ -1,0 +1,57 @@
+<div class="assessment-health-dashboard">
+    <h2>{{ assessmentDetails?.assessmentName }}</h2>
+ 
+      
+    <div class="summary-section">
+        <h3>Assessment Summary</h3>
+        <p><strong>Total Participants:</strong> {{ testResults.length }}</p>
+        <p><strong>Pass Rate:</strong> {{ passRate | number:'1.2-2' }}%</p>
+        <p><strong>Average Score:</strong> {{ averageScore | number:'1.2-2' }}%</p>
+        <p><strong>Assessment Link: </strong> http://tekndra.com/assessments/{{assessmentCode}} </p>
+        <p *ngIf="!visibility">No one Took the test yet</p>
+      </div>
+      <div class="pdf-download-container" class="skip-pdf">
+        <button (click)="downloadPDF()" class="view-btn">Download as PDF</button>
+    </div>
+    <div *ngIf="visibility">
+    <div class="chart-container" >
+      <div>
+        <canvas id="passFailChart"></canvas>
+      </div>
+     
+      <div>
+        <canvas id="timeSpentChart"></canvas>
+      </div>
+    </div>
+
+    <div id="scoredistribution" >
+        <canvas id="scoreDistributionChart"></canvas>
+    </div>
+  
+   </div>
+  
+    <div class="participant-list" *ngIf="visibility">
+      <h3>Participant Results</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Participant</th>
+            <th>email</th>
+            <th>Score</th>
+            <th>Status</th>
+            <th class="skip-pdf">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of testResults">
+            <td>{{ result.name }}</td>
+            <td>{{ result.email }}</td>
+            <td>{{ result.percentage }}%</td>
+            <td>{{ result.percentage >= 60 ? 'Pass' : 'Fail' }}</td>
+            <td class="skip-pdf"><a (click)="viewDetails(result)" class="details-link">Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

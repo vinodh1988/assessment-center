@@ -30,7 +30,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './auth-interceptor.interceptor';
 import { QuestionBankDashboardComponent } from './question-bank-dashboard/question-bank-dashboard.component';
-
+import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
+import { AssessmentHealthDashboardComponent } from './assessment-health-dashboard/assessment-health-dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { QuestionBankDashboardComponent } from './question-bank-dashboard/questi
     AssessmentsDashboardComponent,
     HomeComponent,
     LoginComponent,
-    QuestionBankDashboardComponent
+    QuestionBankDashboardComponent,
+    AssessmentResultsDashboardComponent,
+    AssessmentHealthDashboardComponent,
+    NotFoundComponent
    
   ],
   imports: [
@@ -66,7 +72,8 @@ import { QuestionBankDashboardComponent } from './question-bank-dashboard/questi
     MatProgressSpinnerModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgChartsModule
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,

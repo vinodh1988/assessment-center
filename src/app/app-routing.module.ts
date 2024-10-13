@@ -18,6 +18,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './gaurds/auth.guard';
 import { QuestionBankDashboardComponent } from './question-bank-dashboard/question-bank-dashboard.component';
+import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
+import { AssessmentHealthDashboardComponent } from './assessment-health-dashboard/assessment-health-dashboard.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,6 +28,9 @@ const routes: Routes = [
   // Add more routes here, all protected by the AuthGuard
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path:'questions', component: QuestionListComponent,canActivate: [AuthGuard]},
+  { path: 'assessment-results-dashboard', component: AssessmentResultsDashboardComponent ,canActivate:[AuthGuard]},
+  { path: 'assessment-health-dashboard/:assessmentCode', component: AssessmentHealthDashboardComponent,canActivate:[AuthGuard]},
+  
   { path: 'assessment', component: AssessmentsDashboardComponent, canActivate: [AuthGuard] },
   { path: 'question-banks-home', component: QuestionBankDashboardComponent,  canActivate: [AuthGuard]  },
   { path: 'test-results', component: TestResultsComponent, canActivate: [AuthGuard] },
@@ -38,6 +44,7 @@ const routes: Routes = [
   { path: 'create-single-same', component: CreateSingleSameComponent , canActivate: [AuthGuard]},
   { path: 'create-multi-random', component: CreateMultiRandomComponent , canActivate: [AuthGuard]},
   { path: 'create-multi-same', component: CreateMultiSameComponent, canActivate: [AuthGuard] },
+  { path: '**', component: NotFoundComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

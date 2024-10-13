@@ -1,0 +1,68 @@
+<div class="container">
+    <h1>Assessment Dashboard</h1>
+  
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+      <h2>Quick Links</h2>
+      <div class="links-grid">
+        <a routerLink="/create-single-random" class="link-item">Create Single Question Bank Assessment (Random Sets)</a>
+        <a routerLink="/create-single-same" class="link-item">Create Single Question Bank Assessment (Same Set)</a>
+        <a routerLink="/create-multi-random" class="link-item">Create Multi Question Bank Assessment (Random Sets)</a>
+        <a routerLink="/create-multi-same" class="link-item">Create Multi Question Bank Assessment (Same Set)</a>
+      </div>
+    </section>
+  
+    <!-- Active Assessments Section -->
+    <section class="assessments-section">
+      <h2>Active Assessments</h2>
+      <div *ngIf="activeAssessments.length > 0; else noActive">
+        <div class="assessment-list">
+          <div *ngFor="let assessment of paginatedActiveAssessments" class="assessment-item"  style="position: relative;">
+            <h3>{{ assessment.assessmentName }}</h3>
+            <p>Duration: {{ assessment.duration }} mins</p>
+            <p>Questions: {{ assessment.numberOfQuestions }}</p>
+            <a routerLink="/assessment-health-dashboard/{{ assessment.assessmentcode }}" class="details-link">View Details</a>
+            <div style="position: absolute; overflow: hidden; right: 10px; bottom: 10px; ">
+            
+            <a routerLink="/test-locks/{{ assessment.assessmentcode }}" class="details-link" style="color: rgb(245, 240, 240); 
+            padding: 5px; background-color: rgb(5, 5, 44); border-radius: 5px; display: block;">Locked Tests</a>
+           </div>
+          </div>
+        </div>
+        <!-- Pagination Controls for Active Assessments -->
+        <div class="pagination-controls">
+          <button (click)="prevPage('active')" [disabled]="activePage === 1">Previous</button>
+          <span>Page {{ activePage }} of {{ activeTotalPages }}</span>
+          <button (click)="nextPage('active')" [disabled]="activePage === activeTotalPages">Next</button>
+        </div>
+      </div>
+      <ng-template #noActive>
+        <p>No active assessments.</p>
+      </ng-template>
+    </section>
+  
+    <!-- Expired Assessments Section -->
+    <section class="assessments-section">
+      <h2>Expired Assessments</h2>
+      <div *ngIf="expiredAssessments.length > 0; else noExpired">
+        <div class="assessment-list">
+          <div *ngFor="let assessment of paginatedExpiredAssessments" class="assessment-item expired">
+            <h3>{{ assessment.assessmentName }}</h3>
+            <p>Duration: {{ assessment.duration }} mins</p>
+            <p>Questions: {{ assessment.numberOfQuestions }}</p>
+            <a routerLink="/assessment-health-dashboard/{{ assessment.assessmentcode }}" class="details-link">View Details</a>
+          </div>
+        </div>
+        <!-- Pagination Controls for Expired Assessments -->
+        <div class="pagination-controls">
+          <button (click)="prevPage('expired')" [disabled]="expiredPage === 1">Previous</button>
+          <span>Page {{ expiredPage }} of {{ expiredTotalPages }}</span>
+          <button (click)="nextPage('expired')" [disabled]="expiredPage === expiredTotalPages">Next</button>
+        </div>
+      </div>
+      <ng-template #noExpired>
+        <p>No expired assessments.</p>
+      </ng-template>
+    </section>
+  </div>
+  

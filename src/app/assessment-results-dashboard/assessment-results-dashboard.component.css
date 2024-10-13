@@ -1,0 +1,115 @@
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #e5ecf3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[disabled] {
+    background-color: #ccc;
+  }
+  
+  button:not([disabled]):hover {
+    background-color: #0056b3;
+  }
+  
+  span {
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: bold;
+  }
+  .container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .quick-links {
+    margin-bottom: 30px;
+  }
+  
+  .links-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .link-item {
+    background-color: #f4f9ff;
+    color: rgb(15, 3, 38);
+    padding: 10px 15px;
+    text-align: center;
+  
+    text-decoration: none;
+    border-left: 5px solid rgb(11, 11, 75);
+    border-right: 1px solid rgb(11,11,75);
+    margin: 10px;
+    box-shadow: 5px 5px 5px lightblue;
+  }
+  
+  .link-item:hover {
+    background-color: #393939;
+    color: white;
+  }
+  
+  .assessments-section {
+    margin-bottom: 30px;
+  }
+  
+  .assessment-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .assessment-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    transition: box-shadow 0.3s ease;
+    border-left: 5px solid rgb(1, 1, 45);
+  }
+  
+  .assessment-item:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .assessment-item h3 {
+    margin: 0 0 5px;
+    color: #333;
+  }
+  
+  .details-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .details-link:hover {
+    text-decoration: underline;
+  }
+  
+  .expired {
+    background-color: #f4f7fc;
+  }
+  
+  .expired h3 {
+    color: #721c24;
+  }
+  
