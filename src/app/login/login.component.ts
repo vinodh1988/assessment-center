@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
-      this.http.post<any>('http://localhost:5000/login', { username, password }).subscribe(
+      this.http.post<any>('http://15.207.18.117:5000/login', { username, password }).subscribe(
         response => {
           
           sessionStorage.setItem('access_token', response.access_token);
