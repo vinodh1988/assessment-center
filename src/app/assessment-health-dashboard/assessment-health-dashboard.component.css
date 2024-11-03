@@ -2,59 +2,83 @@
     padding: 20px;
   }
   
+  /* Chart container for left-right alignment */
   .chart-container {
-    
-    overflow: hidden;
+    display: flex;
+    justify-content: space-between; /* Space between the charts */
+    flex-wrap: wrap; /* Stack charts vertically on smaller screens */
     margin-bottom: 30px;
- 
   }
   
   .chart-container div {
-  
-
-    float: left;
-    max-width: 45%;
+    flex: 1 1 45%; /* Each chart will take 45% of the container's width */
+    padding: 20px;
     box-sizing: border-box;
-    padding: 30px;
-    margin: 20px;
     border: 1px solid rgb(247, 244, 244);
     box-shadow: 1px 1px 1px lightgray;
+    margin: 10px;
   }
+  
   #scoredistribution {
     width: 90%;
     margin: 20px;
     padding: 30px;
-    margin: 20px;
     border: 1px solid rgb(244, 239, 239);
     box-shadow: 2px 2px 2px rgb(246, 244, 244);
   }
   
+  /* Responsive layout for charts on smaller screens */
+  @media (max-width: 768px) {
+    .chart-container div {
+      flex: 1 1 100%; /* Full width on smaller screens */
+      max-width: 100%;
+    }
+  }
+  
+  /* Summary Section */
   .summary-section {
     text-align: left;
     margin-bottom: 30px;
   }
   
-  .summary-section h3{
+  .summary-section h3 {
     text-align: center;
     color: rgb(5, 5, 62);
     font-weight: bold;
   }
+  
+  /* Participant list table */
   .participant-list table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    display: block; /* Ensures the table can be scrolled on small screens */
+    overflow-x: auto; /* Horizontal scroll for smaller screens */
+    white-space: nowrap; /* Prevents text wrapping in table cells */
   }
   
+  /* Table cells */
   .participant-list th, .participant-list td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
   }
   
+  /* Header background color */
   .participant-list th {
     background-color: #f4f4f4;
   }
   
+  /* Responsive table on smaller screens */
+  @media (max-width: 768px) {
+    .participant-list table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+  
+  /* Button styles */
   button {
     padding: 5px 10px;
     background-color: #007bff;
@@ -64,11 +88,13 @@
     cursor: pointer;
   }
   
+  /* Disabled button styles */
   button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
   
+  /* View button styles */
   .view-btn {
     padding: 5px 10px;
     background-color: #007bff;
@@ -77,3 +103,4 @@
     border-radius: 4px;
     cursor: pointer;
   }
+  

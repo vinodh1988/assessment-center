@@ -10,7 +10,7 @@
         <p><strong>Assessment Link: </strong> http://tekndra.com/assessments/{{assessmentCode}} </p>
         <p *ngIf="!visibility">No one Took the test yet</p>
       </div>
-      <div class="pdf-download-container" class="skip-pdf">
+      <div class="pdf-download-container" class="skip-pdf" *ngIf="visibility">
         <button (click)="downloadPDF()" class="view-btn">Download as PDF</button>
     </div>
     <div *ngIf="visibility">

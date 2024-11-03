@@ -69,6 +69,7 @@ export class QuestionBankQuestionsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+         result.type=result.answer.length>1?"multi":"single"
         // Call the API to update the question
         this.assessmentService.updateOrAddQuestion(this.questionBankName, result).subscribe({
           next: () => {
@@ -95,6 +96,7 @@ export class QuestionBankQuestionsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+          result.type=result.answer.length>1?"multi":"single"
         // Call the API to add the new question
         this.assessmentService.updateOrAddQuestion(this.questionBankName, result).subscribe({
           next: () => {

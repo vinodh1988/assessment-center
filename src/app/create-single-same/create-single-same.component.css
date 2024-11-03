@@ -27,3 +27,10 @@
   mat-form-field{
     width:100%;
   }
+  h3{
+    text-align: center;
+    color: rgb(227, 80, 36);
+    padding:  15px;
+    padding-bottom: 30px;
+    font-weight: bold;
+  }

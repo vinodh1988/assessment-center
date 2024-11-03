@@ -68,7 +68,7 @@ export class EditQuestionModalComponent {
 
   // Method to save the changes and close the modal
   save() {
-    this.dialogRef.close(this.question); // Return the edited question data
+     this.dialogRef.close(this.question); // Return the edited question data
   }
 
   // Method to close the modal without saving
