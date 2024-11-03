@@ -1,4 +1,3 @@
-// src/app/services/assessment.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -37,34 +36,31 @@ export class AssessmentService {
       params: { assessmentCode },
     });
   }
-    getLockedAssessments(assessmentCode: string): Observable<any> {
-      const url = `${this.baseUrl}/lockedstatus?assessmentCode=${assessmentCode}`;
-      return this.http.get(`${url}`);
-    }
- 
-    unlockTest(assessmentCode:string,email: string): Observable<any>  {
-      return this.http.post(`${this.baseUrl}/assessment/unlock`,{assessmentCode:assessmentCode,email:email});
-    }
-  
-   
-  
-    // Fetch questions for a specific question bank
-    fetchQuestions(questionBankName: string): Observable<any[]> {
-      return this.http.get<any[]>(`${this.baseUrl}/questionslist`, { params: { questionBankName } });
-    }
 
-  
-    updateOrAddQuestion(questionBankName: string, question: any): Observable<any> {
-      const payload = { questionBankName, question };
-      return this.http.put(`${this.baseUrl}/question`, payload);
-    }
+  getLockedAssessments(assessmentCode: string): Observable<any> {
+    const url = `${this.baseUrl}/lockedstatus?assessmentCode=${assessmentCode}`;
+    return this.http.get(`${url}`);
+  }
 
-    getStatus(assessmentCode: string, email: string): Observable<any> {
-      return this.http.get(`${this.baseUrl}/assessments/status?assessmentcode=${assessmentCode}&email=${email}`);
-    }
-  
+  unlockTest(assessmentCode: string, email: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/assessment/unlock`, { assessmentCode: assessmentCode, email: email });
+  }
 
-    // Fetch test details by assessmentCode
+  // Fetch questions for a specific question bank
+  fetchQuestions(questionBankName: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/questionslist`, { params: { questionBankName } });
+  }
+
+  updateOrAddQuestion(questionBankName: string, question: any): Observable<any> {
+    const payload = { questionBankName, question };
+    return this.http.put(`${this.baseUrl}/question`, payload);
+  }
+
+  getStatus(assessmentCode: string, email: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/assessments/status?assessmentcode=${assessmentCode}&email=${email}`);
+  }
+
+  // Fetch test details by assessmentCode
   getTestDetails(assessmentCode: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/testdetails/${assessmentCode}`);
   }
@@ -82,10 +78,11 @@ export class AssessmentService {
   createMultiBankAssessment(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/create-assessment-multi-bank`, data);
   }
-  
+
   createMultiBankCombinedAssessment(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/create-full-combined-assessment`, data);
   }
+
   downloadExcel(data: any): Observable<Blob> {
     const url = `${this.baseUrl}/downloadExcel`;
     const headers = new HttpHeaders({
@@ -99,14 +96,12 @@ export class AssessmentService {
     });
   }
 
-
   downloadPDF(data: { html: string }): Observable<Blob> {
     const url = `${this.baseUrl}/generate-pdf`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
 
-  
     return this.http.post(url, data, {
       headers: headers,
       responseType: 'blob' // Expect binary file (PDF)
@@ -119,12 +114,31 @@ export class AssessmentService {
       'Content-Type': 'application/json',
     });
 
-  
     return this.http.post(url, data, {
       headers: headers,
       responseType: 'blob' // Expect binary file (PDF)
     });
   }
 
-  
+  // New methods for updating OpenAI API key, Application API key, and Password
+  updateOpenAIKey(newKey: string): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.post(`${this.baseUrl}/update_openai_key`, { openai_api_key: newKey }, { headers });
+  }
+
+  updateAppApiKey(newKey: string): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.post(`${this.baseUrl}/update_app_api_key`, { app_api_key: newKey }, { headers });
+  }
+
+  updatePassword(username: string, newPassword: string): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.put(`${this.baseUrl}/update_password`, { username, new_password: newPassword }, { headers });
+  }
+
+  // Helper method to get Authorization headers with JWT token
+  private getAuthHeaders(): HttpHeaders {
+    const token = sessionStorage.getItem('token'); // Adjust if using a different storage location
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  }
 }

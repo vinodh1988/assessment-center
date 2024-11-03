@@ -34,6 +34,8 @@ import { AssessmentResultsDashboardComponent } from './assessment-results-dashbo
 import { AssessmentHealthDashboardComponent } from './assessment-health-dashboard/assessment-health-dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     QuestionBankDashboardComponent,
     AssessmentResultsDashboardComponent,
     AssessmentHealthDashboardComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SettingsComponent,
+    SettingsDialogComponent
    
   ],
   imports: [

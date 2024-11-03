@@ -21,6 +21,7 @@ import { QuestionBankDashboardComponent } from './question-bank-dashboard/questi
 import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
 import { AssessmentHealthDashboardComponent } from './assessment-health-dashboard/assessment-health-dashboard.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   // Add more routes here, all protected by the AuthGuard
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path:'questions', component: QuestionListComponent,canActivate: [AuthGuard]},
+  { path:'settings', component: SettingsComponent,canActivate: [AuthGuard]},
   { path: 'assessment-results-dashboard', component: AssessmentResultsDashboardComponent ,canActivate:[AuthGuard]},
   { path: 'assessment-health-dashboard/:assessmentCode', component: AssessmentHealthDashboardComponent,canActivate:[AuthGuard]},
   
