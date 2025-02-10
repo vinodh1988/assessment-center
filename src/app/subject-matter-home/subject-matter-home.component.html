@@ -1,0 +1,18 @@
+<button class="add-subject-button" (click)="addSubject()">
+    <span class="icon">➕</span> Add Subject
+</button>
+<div *ngFor="let subject of subjects" class="subject-panel">
+    <div class="subject-header" (click)="subject.expanded = !subject.expanded">
+        {{ subject.subject }}
+    </div>
+    <div class="subject-content" *ngIf="subject.expanded">
+        <ul>
+            <li *ngFor="let topic of subject.topics" (click)="navigateToCodeList(subject.subject, topic)">
+                {{ topic}}
+                <span class="questionscount">{{getcount(subject.subject,topic)}} questions</span>
+                <span class="icon" (click)="navigateToCodeGenerate(subject.subject, topic)"
+                >➕ Add Code Questions</span> 
+            </li>
+        </ul>
+    </div>
+</div>

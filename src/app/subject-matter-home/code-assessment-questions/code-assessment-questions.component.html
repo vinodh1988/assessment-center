@@ -1,0 +1,24 @@
+<div *ngIf="codeQuestions">
+    <div class="accordion">
+        <div *ngFor="let question of codeQuestions" class="accordion-item">
+            <div class="accordion-header" (click)="question.expanded = !question.expanded">
+                {{ question.description }}
+            </div>
+            <div class="accordion-content" *ngIf="question.expanded">
+ <button (click)="openCreateAssessment(question)">Create Assessment</button> 
+ <br />        
+<b>Outline:</b> 
+
+<pre>{{ question.outline }}</pre>
+
+<b>Question: </b>
+
+<pre>{{ question.question }}</pre>
+<b>Test Cases:</b> 
+
+<pre>{{ question.testcases }}</pre>
+                
+            </div>
+        </div>
+    </div>
+</div>

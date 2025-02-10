@@ -36,6 +36,17 @@ import { NgChartsModule } from 'ng2-charts';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SettingsDialogComponent } from './settings-dialog/settings-dialog.component';
+import { CodeAssessmentsHomeComponent } from './code-assessments-home/code-assessments-home.component';
+import { SubjectMatterHomeComponent } from './subject-matter-home/subject-matter-home.component';
+import { SubjectsFormComponent } from './subject-matter-home/subjects-form/subjects-form.component';
+import { CodeGenerateComponentComponent } from './code-generate-component/code-generate-component.component';
+import { EditDialogComponent } from './code-generate-component/edit-dialog/edit-dialog.component';
+import { BatchHomeComponent } from './batch-home/batch-home.component';
+import { CreateBatchComponent } from './batch-home/create-batch/create-batch.component';
+import { CreateBatchCategoryComponent } from './batch-home/create-batch-category/create-batch-category.component';
+import { BatchCategoryHomeComponent } from './batch-home/batch-category-home/batch-category-home.component';
+import { CodeAssessmentQuestionsComponent } from './subject-matter-home/code-assessment-questions/code-assessment-questions.component';
+import { CreateCodeAssessmentComponent } from './subject-matter-home/create-code-assessment/create-code-assessment.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +76,18 @@ import { SettingsDialogComponent } from './settings-dialog/settings-dialog.compo
     AssessmentHealthDashboardComponent,
     NotFoundComponent,
     SettingsComponent,
-    SettingsDialogComponent
+    SettingsDialogComponent,
+    CodeAssessmentsHomeComponent,
+    SubjectMatterHomeComponent,
+    SubjectsFormComponent,
+    CodeGenerateComponentComponent,
+    EditDialogComponent,
+    BatchHomeComponent,
+    CreateBatchComponent,
+    CreateBatchCategoryComponent,
+    BatchCategoryHomeComponent,
+    CodeAssessmentQuestionsComponent,
+    CreateCodeAssessmentComponent
    
   ],
   imports: [

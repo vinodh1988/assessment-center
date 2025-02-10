@@ -1,0 +1,38 @@
+<form #form="ngForm" (ngSubmit)="createBatch(form)">
+    <div>
+      <label for="batchname">Batch Name:</label>
+      <input type="text" id="batchname" name="batchname" [(ngModel)]="batchname" required>
+    </div>
+    <div>
+      <label for="month">Month:</label>
+      <select id="month" name="month" [(ngModel)]="month" required>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
+    </div>
+    <div>
+      <label for="year">Year:</label>
+      <select id="year" name="year" [(ngModel)]="year" required>
+        <option [value]="currentYear">{{ currentYear }}</option>
+        <option [value]="previousYear">{{ previousYear }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="batchcategory">Batch Category:</label>
+      <select id="batchcategory" name="batchcategory" [(ngModel)]="batchcategory" required>
+        <option *ngFor="let category of batchCategories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+    <button type="submit">Create Batch</button>
+  </form>
+  

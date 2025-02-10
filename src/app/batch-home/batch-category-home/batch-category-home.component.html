@@ -1,0 +1,16 @@
+<div>
+    <button (click)="addBatchCategory()">Add Batch Category</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Batch Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of batchCategories; let i = index">
+          <td>{{ category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

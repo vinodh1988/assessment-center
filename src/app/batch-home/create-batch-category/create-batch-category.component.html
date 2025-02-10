@@ -1,0 +1,9 @@
+<form #form="ngForm" (ngSubmit)="createBatchCategory(form)">
+    <div>
+      <label for="batchcategory">Batch Category:</label>
+      <input type="text" id="batchcategory" name="batchcategory" [(ngModel)]="batchcategory" required>
+    </div>
+    <button type="submit">Create Batch Category</button>
+    <button type="button" (click)="onCancel()">Cancel</button>
+  </form>
+  

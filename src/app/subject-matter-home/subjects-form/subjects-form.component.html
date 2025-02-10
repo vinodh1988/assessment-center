@@ -1,0 +1,17 @@
+<div id="content">
+<div>
+    <form (ngSubmit)="onSubmit()">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" [(ngModel)]="subject" name="subject" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <div *ngIf="response">
+    <h2>{{ response.subject }}</h2>
+    <ul>
+    <li *ngFor="let topic of editableTopics"> {{ topic }} </li>
+   </ul>
+    <button (click)="saveChanges()">Save Changes</button>
+  </div>
+</div>

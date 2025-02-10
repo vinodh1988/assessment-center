@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Edit Field</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="data.field"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</div>

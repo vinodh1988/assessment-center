@@ -126,7 +126,7 @@ export class QuestionListComponent {
       questions: this.questions 
     };
 
-    this.http.post('http://15.207.18.117:5000/questionsupload', payload).subscribe({
+    this.http.post('http://localhost:5000/questionsupload', payload).subscribe({
       next: (response) => {
         this.snackBar.open('Questions uploaded successfully!', 'Close', {
           duration: 3000,
@@ -155,7 +155,7 @@ export class QuestionListComponent {
       questions: this.questions 
     };
 
-    this.http.post('http://15.207.18.117:5000/questionsupload', payload).subscribe({
+    this.http.post('http://localhost:5000/questionsupload', payload).subscribe({
       next: (response) => {
         this.snackBar.open('Questions uploaded successfully!', 'Close', {
           duration: 3000,

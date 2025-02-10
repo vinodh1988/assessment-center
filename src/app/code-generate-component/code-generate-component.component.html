@@ -1,0 +1,52 @@
+<div class="container">
+    <h1>Code Generation</h1>
+    <form  *ngIf="!isLoading && !message" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" [(ngModel)]="subject" name="subject" readonly>
+      </div>
+  
+      <div class="form-group">
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" [(ngModel)]="topic" name="topic" readonly>
+      </div>
+  
+      <div class="form-group">
+        <label for="technology">Technology:</label>
+        <select id="technology" [(ngModel)]="technology" name="technology">
+          <option *ngFor="let tech of topics" [value]="tech">{{ tech }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="description" name="description"></textarea>
+      </div>
+  
+      <button type="submit">Submit</button>
+    </form>
+
+    <div *ngIf="isLoading" class="spinner-container">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+  
+    <div *ngIf="!isLoading &&!message && response" class="response-container">
+  
+        <h2>Outline <span class="icon" (click)="editOutline()">✏️</span></h2>
+        <pre>{{ response.outline }}</pre>
+        
+        <h2>Question <span class="icon" (click)="editQuestion()">✏️</span></h2>
+        <pre>{{ response.question }}</pre>
+        
+        <h2>Test Cases <span class="icon" (click)="editTestCases()">✏️</span></h2>
+        <pre>{{ response.testcases }}</pre>
+
+          
+        <button (click)="addCodeQuestion()">Add Code Question</button>
+    </div>
+  </div>
+  
+  <div id="success">
+       <h3> {{message}}</h3>
+  </div>

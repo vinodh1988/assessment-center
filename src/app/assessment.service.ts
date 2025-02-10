@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AssessmentService {
-  private baseUrl = 'http://15.207.18.117:5000'; // Update this URL according to your backend server configuration
+  private baseUrl = 'http://localhost:5000'; // Update this URL according to your backend server configuration
 
   constructor(private http: HttpClient) {}
 
@@ -83,6 +83,60 @@ export class AssessmentService {
     return this.http.post(`${this.baseUrl}/create-full-combined-assessment`, data);
   }
 
+  // Method to fetch all subjects
+  fetchAllSubjects(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/subjects`);
+  }
+
+  // Method to fetch topics for a specific subject
+  fetchTopics(subject: string): Observable<any[]> {
+    return this.http.post<any[]>(`${this.baseUrl}/topics`, { subject });
+  }
+
+  // Method to create a new subject matter
+  createSubjectMatter(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/create-subject-matter`, data);
+  }
+
+  fetchQuestionsByTopic(topic: string): Observable<any[]> {
+    const url = `${this.baseUrl}/codequestion`;
+    const payload = { topic };
+    return this.http.post<any[]>(url, payload);
+  }
+
+  // Method to post a code question
+  postCodeQuestion(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/codequestions`, data);
+  }
+
+  // Method to fetch all batch categories
+  fetchBatchCategories(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/batchcategories`);
+  }
+
+  // Method to fetch all batches
+  fetchAllBatches(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/batches`);
+  }
+
+  // Method to post batch details
+  postBatchDetails(batchDetails: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/batches`, batchDetails);
+  }
+
+  // Method to create a new batch category
+  createBatchCategory(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/batchcategories`, data);
+  }
+
+  createBatch(batchData: { batchname: string, month: string, year: number, batchcategory: string }): Observable<any> {
+    return this.http.post(`${this.baseUrl}/batches`, batchData);
+  }
+  
+  // Method to create a code assessment
+  createCodeAssessment(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/code-assessments`, data);
+  }
   downloadExcel(data: any): Observable<Blob> {
     const url = `${this.baseUrl}/downloadExcel`;
     const headers = new HttpHeaders({
@@ -96,6 +150,16 @@ export class AssessmentService {
     });
   }
 
+  // Method to get the count of code questions by topic and subject
+  getCodeQuestionsSubjectsTopics(): Observable<any> {
+    const url = `${this.baseUrl}/codequestions/subjects-topics`;
+    return this.http.get<string>(url);
+  }
+
+  getCodeQuestions(subject:string,topic:string): Observable<any> {
+    const url = `${this.baseUrl}/codequestions?subject=${subject}&topic=${topic}`;
+    return this.http.get<string>(url);
+  }
   downloadPDF(data: { html: string }): Observable<Blob> {
     const url = `${this.baseUrl}/generate-pdf`;
     const headers = new HttpHeaders({

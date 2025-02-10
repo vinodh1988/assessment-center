@@ -22,6 +22,12 @@ import { AssessmentResultsDashboardComponent } from './assessment-results-dashbo
 import { AssessmentHealthDashboardComponent } from './assessment-health-dashboard/assessment-health-dashboard.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SettingsComponent } from './settings/settings.component';
+import { CodeAssessmentsHomeComponent } from './code-assessments-home/code-assessments-home.component';
+import { SubjectMatterHomeComponent } from './subject-matter-home/subject-matter-home.component';
+import { CodeGenerateComponentComponent } from './code-generate-component/code-generate-component.component';
+import { BatchHomeComponent } from './batch-home/batch-home.component';
+import { BatchCategoryHomeComponent } from './batch-home/batch-category-home/batch-category-home.component';
+import { CodeAssessmentQuestionsComponent } from './subject-matter-home/code-assessment-questions/code-assessment-questions.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -46,6 +52,12 @@ const routes: Routes = [
   { path: 'create-single-same', component: CreateSingleSameComponent , canActivate: [AuthGuard]},
   { path: 'create-multi-random', component: CreateMultiRandomComponent , canActivate: [AuthGuard]},
   { path: 'create-multi-same', component: CreateMultiSameComponent, canActivate: [AuthGuard] },
+  { path: 'code-assessments-home', component: CodeAssessmentsHomeComponent, canActivate: [AuthGuard] },
+  { path: 'subjects', component: SubjectMatterHomeComponent, canActivate: [AuthGuard] },
+  { path: 'code-generate', component: CodeGenerateComponentComponent, canActivate: [AuthGuard] ,data: {  }},
+  { path: 'batch-home',component: BatchHomeComponent, canActivate: [AuthGuard] },
+  { path: 'batch-category', component: BatchCategoryHomeComponent , canActivate: [AuthGuard] },
+  { path: 'code-questions', component: CodeAssessmentQuestionsComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 @NgModule({
