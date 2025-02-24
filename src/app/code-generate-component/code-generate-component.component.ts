@@ -20,6 +20,7 @@ export class CodeGenerateComponentComponent {
   message=undefined;
 
 
+
   constructor(private assessmentService:AssessmentService,private route: ActivatedRoute, private router: Router,public dialog: MatDialog) { 
      const navigation = this.router.getCurrentNavigation();
     console.log(navigation);
@@ -53,7 +54,7 @@ export class CodeGenerateComponentComponent {
 
   editQuestion() {
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '600px',
+      width: '800px',
       data: { field: this.response.question }
     });
 
@@ -64,9 +65,10 @@ export class CodeGenerateComponentComponent {
     });
   }
 
+
   editTestCases() {
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '600px',
+      width: '800px',
       data: { field: this.response.testcases }
     });
 
@@ -80,7 +82,7 @@ export class CodeGenerateComponentComponent {
 
   editOutline() {
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '600px',
+      width: '800px',
       data: { field: this.response.outline }
     });
 
@@ -101,7 +103,8 @@ export class CodeGenerateComponentComponent {
       technology: this.technology,
       outline: this.response.outline.replace('```java','').replace('```', ''),
       question: this.response.question,
-      testcases: this.response.testcases.replace('```java','').replace('```', '')
+      testcases: this.response.testcases.replace('```java','').replace('```', ''),
+   
     };
 
     this.assessmentService.postCodeQuestion(data).subscribe(

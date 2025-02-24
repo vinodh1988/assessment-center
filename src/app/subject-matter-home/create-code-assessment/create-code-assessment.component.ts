@@ -12,6 +12,7 @@ export class CreateCodeAssessmentComponent implements OnInit {
   batches: any[] = [];
   selectedBatch: string;
   duration: number;
+  assessmentname:string;
 
   constructor(
     private assessmentService: AssessmentService,
@@ -39,6 +40,9 @@ export class CreateCodeAssessmentComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.dialogRef.close({ batchname: this.selectedBatch, duration: this.duration });
+    this.dialogRef.close({ 
+      batchname: this.selectedBatch, 
+      assessmentname: this.assessmentname,
+      duration: this.duration });
   }
 }

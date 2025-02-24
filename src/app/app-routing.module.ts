@@ -28,6 +28,8 @@ import { CodeGenerateComponentComponent } from './code-generate-component/code-g
 import { BatchHomeComponent } from './batch-home/batch-home.component';
 import { BatchCategoryHomeComponent } from './batch-home/batch-category-home/batch-category-home.component';
 import { CodeAssessmentQuestionsComponent } from './subject-matter-home/code-assessment-questions/code-assessment-questions.component';
+import { AssessmentsListComponent } from './code-assessments-home/assessments-list/assessments-list.component';
+import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-assessment-details/code-assessment-details.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -58,6 +60,8 @@ const routes: Routes = [
   { path: 'batch-home',component: BatchHomeComponent, canActivate: [AuthGuard] },
   { path: 'batch-category', component: BatchCategoryHomeComponent , canActivate: [AuthGuard] },
   { path: 'code-questions', component: CodeAssessmentQuestionsComponent, canActivate: [AuthGuard] },
+  { path: 'code-assessments',component: AssessmentsListComponent, canActivate: [AuthGuard] },
+  { path: 'code-assessment-details/:assessmentcode', component: CodeAssessmentDetailsComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 @NgModule({

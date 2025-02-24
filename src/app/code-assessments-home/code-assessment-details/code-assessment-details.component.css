@@ -1,0 +1,44 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .details-table th, .details-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .details-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .accordion {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .accordion:hover {
+    background-color: #45a049;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  

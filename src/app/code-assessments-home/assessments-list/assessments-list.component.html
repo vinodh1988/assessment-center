@@ -1,0 +1,33 @@
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Assessment Name</th>
+          <th>Subject</th>
+          <th>Topic</th>
+          <th>Batch</th>
+          <th>Duration (minutes)</th>
+          <th>Technology</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let assessment of assessments">
+          <td>{{ assessment.assessmentname }}</td>
+          <td>{{ assessment.subject }}</td>
+          <td>{{ assessment.topic }}</td>
+          <td>{{ assessment.batch }}</td>
+          <td>{{ assessment.duration }}</td>
+          <td>{{ assessment.technology }}</td>
+          <td>{{ assessment.date }}</td>
+          <td>{{ assessment.status }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="viewDetails(assessment.assessmentcode)">View Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AssessmentService {
-  private baseUrl = 'http://localhost:5000'; // Update this URL according to your backend server configuration
+  private baseUrl = 'http://13.90.102.109:5000'; // Update this URL according to your backend server configuration
 
   constructor(private http: HttpClient) {}
 
@@ -137,6 +137,21 @@ export class AssessmentService {
   createCodeAssessment(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/code-assessments`, data);
   }
+
+  getCodeAssessments(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/code-assessments`);
+  }
+  // Method to fetch assessment details by assessment code
+  getCompletedAssessmentDetails(assessmentcode: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/completed-assessments`, {
+      params: { assessmentcode }
+    });
+  }
+  // Method to fetch code assessment details by assessment code
+  getCodeAssessmentDetails(assessmentCode: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/code-assessments/${assessmentCode}`);
+  }
+ 
   downloadExcel(data: any): Observable<Blob> {
     const url = `${this.baseUrl}/downloadExcel`;
     const headers = new HttpHeaders({

@@ -47,6 +47,8 @@ import { CreateBatchCategoryComponent } from './batch-home/create-batch-category
 import { BatchCategoryHomeComponent } from './batch-home/batch-category-home/batch-category-home.component';
 import { CodeAssessmentQuestionsComponent } from './subject-matter-home/code-assessment-questions/code-assessment-questions.component';
 import { CreateCodeAssessmentComponent } from './subject-matter-home/create-code-assessment/create-code-assessment.component';
+import { AssessmentsListComponent } from './code-assessments-home/assessments-list/assessments-list.component';
+import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-assessment-details/code-assessment-details.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +89,9 @@ import { CreateCodeAssessmentComponent } from './subject-matter-home/create-code
     CreateBatchCategoryComponent,
     BatchCategoryHomeComponent,
     CodeAssessmentQuestionsComponent,
-    CreateCodeAssessmentComponent
+    CreateCodeAssessmentComponent,
+    AssessmentsListComponent,
+    CodeAssessmentDetailsComponent
    
   ],
   imports: [

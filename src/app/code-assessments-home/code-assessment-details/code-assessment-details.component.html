@@ -1,0 +1,65 @@
+<div class="container" *ngIf="assessmentDetails">
+    <h2>Assessment Details</h2>
+    <table class="details-table">
+      <tr>
+        <th>Assessment Name:</th>
+        <td>{{ assessmentDetails.assessmentname }}</td>
+      </tr>
+      <tr>
+        <th>Assessment Link:</th>
+        <td>http://13.90.102.109:5000/code-assessments/{{ assessmentDetails.assessmentcode }}</td>
+      </tr>
+      <tr>
+        <th>Subject:</th>
+        <td>{{ assessmentDetails.subject }}</td>
+      </tr>
+      <tr>
+        <th>Topic:</th>
+        <td>{{ assessmentDetails.topic }}</td>
+      </tr>
+      <tr>
+        <th>Batch:</th>
+        <td>{{ assessmentDetails.batch }}</td>
+      </tr>
+      <tr>
+        <th>Technology:</th>
+        <td>{{ assessmentDetails.technology }}</td>
+      </tr>
+      <tr>
+        <th>Date:</th>
+        <td>{{ assessmentDetails.date }}</td>
+      </tr>
+    </table>
+  
+    <h3>Completed Assessments</h3>
+    <table class="details-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Candidate Name</th>
+          <th>Phone Number</th>
+          <th>Status</th>
+          <th>Result</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let assessment of completedAssessments; let i = index">
+          <td>{{ assessment.email }}</td>
+          <td>{{ assessment.candidateName }}</td>
+          <td>{{ assessment.phoneNumber }}</td>
+          <td>{{ assessment.status }}</td>
+          <td>{{ assessment.result }}</td>
+          <td>
+            <button class="accordion" (click)="toggleCode(i)">
+              {{ assessment.showCode ? 'Hide Code' : 'Show Code' }}
+            </button>
+            <div class="panel" *ngIf="assessment.showCode">
+              <pre>{{ assessment.code }}</pre>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

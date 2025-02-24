@@ -1,16 +1,26 @@
 <h1 mat-dialog-title>Create Code Assessment</h1>
-<div mat-dialog-content>
+<div >
   <form>
+    <div class="form-item">
     <mat-form-field>
       <mat-label>Batch Name</mat-label>
       <mat-select [(ngModel)]="selectedBatch" name="batch">
         <mat-option *ngFor="let batch of batches" [value]="batch.batchname">{{ batch.batchname }}</mat-option>
       </mat-select>
     </mat-form-field>
+    </div>
+    <div class="form-item">
+    <mat-form-field>
+        <mat-label>Assessment Name</mat-label>
+        <input matInput type="text" [(ngModel)]="assessmentname" name="assessmentname" required>
+      </mat-form-field>
+    </div>
+    <div class="form-item">
     <mat-form-field>
       <mat-label>Duration (minutes)</mat-label>
       <input matInput type="number" [(ngModel)]="duration" name="duration" required>
     </mat-form-field>
+    </div>
   </form>
 </div>
 <div mat-dialog-actions>

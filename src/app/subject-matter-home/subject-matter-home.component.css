@@ -64,5 +64,10 @@
   .subject-panel .icon {
     margin-left: auto; /* Push the span to the right */
     cursor: pointer; /* Optional: Add a pointer cursor for better UX */
+    background-color: lightgray;
+    padding: 10px;
   }
   
+  li {
+    cursor: pointer; /* Optional: Add a pointer cursor for better UX */
+  }

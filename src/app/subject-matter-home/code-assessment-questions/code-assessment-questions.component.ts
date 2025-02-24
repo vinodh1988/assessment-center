@@ -52,10 +52,12 @@ export class CodeAssessmentQuestionsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         const assessmentData = {
+          assessmentname: result.assessmentname,
           subject: this.subject,
           topic: this.topic,
           question: question.question,
           outline: question.outline,
+          testcases: question.testcases,
           batch: result.batchname,
           duration: result.duration,
           technology: question.technology,
@@ -84,4 +86,6 @@ export class CodeAssessmentQuestionsComponent implements OnInit {
       }
     });
   }
+
+
 }
