@@ -35,7 +35,6 @@ export class AddQuestionModalComponent {
       formData.append('file', this.selectedFile);
 
       this.assessmentService.uploadSpringBootCodeQuestions(
-        this.addQuestionForm.get('name')?.value,
         formData
       ).subscribe({
         next: () => {
