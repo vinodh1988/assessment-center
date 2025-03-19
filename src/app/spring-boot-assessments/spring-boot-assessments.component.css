@@ -1,9 +1,10 @@
 .menu {
     background-color: #333;
     overflow: hidden;
-    width: 400px;
-    margin-left: 25%;
+    min-width: 320px;
+    margin-left: 20%;
     padding: 50px;
+    border-radius: 10px;
 
 }
 
