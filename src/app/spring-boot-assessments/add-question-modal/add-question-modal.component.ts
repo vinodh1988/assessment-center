@@ -42,7 +42,9 @@ export class AddQuestionModalComponent {
           this.snackBar.open('Question uploaded successfully!', 'Close', { duration: 3000 });
           this.dialogRef.close();
         },
-        error: () => {
+        error: (error:any) => {
+          console.log(error);
+          
           this.snackBar.open('Failed to upload the question.', 'Close', { duration: 3000 });
         }
       });
