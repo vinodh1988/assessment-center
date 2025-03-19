@@ -49,6 +49,7 @@ import { CodeAssessmentQuestionsComponent } from './subject-matter-home/code-ass
 import { CreateCodeAssessmentComponent } from './subject-matter-home/create-code-assessment/create-code-assessment.component';
 import { AssessmentsListComponent } from './code-assessments-home/assessments-list/assessments-list.component';
 import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-assessment-details/code-assessment-details.component';
+import { SpringBootAssessmentsComponent } from './spring-boot-assessments/spring-boot-assessments.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-ass
     CodeAssessmentQuestionsComponent,
     CreateCodeAssessmentComponent,
     AssessmentsListComponent,
-    CodeAssessmentDetailsComponent
+    CodeAssessmentDetailsComponent,
+    SpringBootAssessmentsComponent
    
   ],
   imports: [

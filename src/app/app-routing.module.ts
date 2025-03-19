@@ -30,6 +30,7 @@ import { BatchCategoryHomeComponent } from './batch-home/batch-category-home/bat
 import { CodeAssessmentQuestionsComponent } from './subject-matter-home/code-assessment-questions/code-assessment-questions.component';
 import { AssessmentsListComponent } from './code-assessments-home/assessments-list/assessments-list.component';
 import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-assessment-details/code-assessment-details.component';
+import { SpringBootAssessmentsComponent } from './spring-boot-assessments/spring-boot-assessments.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: 'code-questions', component: CodeAssessmentQuestionsComponent, canActivate: [AuthGuard] },
   { path: 'code-assessments',component: AssessmentsListComponent, canActivate: [AuthGuard] },
   { path: 'code-assessment-details/:assessmentcode', component: CodeAssessmentDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'sprint-boot-assessments',component: SpringBootAssessmentsComponent,canActivate:[AuthGuard]},
   { path: '**', component: NotFoundComponent }
 ];
 @NgModule({
