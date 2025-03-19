@@ -13,6 +13,7 @@ export class SpringBootAssessmentsComponent {
   openAddQuestionModal(): void {
     this.dialog.open(AddQuestionModalComponent, {
       width: '500px',
+      disableClose: true,
     });
   }
 }
