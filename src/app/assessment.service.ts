@@ -138,6 +138,11 @@ export class AssessmentService {
     return this.http.post(`${this.baseUrl}/code-assessments`, data);
   }
 
+
+
+createSpringBootAssessment(payload: { name: string; batchname: string }): Observable<any> {
+  return this.http.post(`${this.baseUrl}/spring-assessments`, payload);
+}
   getCodeAssessments(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/code-assessments`);
   }

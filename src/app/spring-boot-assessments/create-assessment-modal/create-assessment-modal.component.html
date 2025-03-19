@@ -1,0 +1,23 @@
+<mat-dialog-content>
+    <form [formGroup]="assessmentForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Assessment Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter assessment name">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Select Batch</mat-label>
+        <mat-select formControlName="batch">
+          <mat-option *ngFor="let batch of batches" [value]="batch.batchname">
+            {{ batch.batchname }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" (click)="submit()">Create</button>
+  </mat-dialog-actions>
+  
