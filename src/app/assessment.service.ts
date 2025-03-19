@@ -165,6 +165,12 @@ export class AssessmentService {
     });
   }
 
+  // Method to upload code questions for Spring Boot
+  uploadSpringBootCodeQuestions(name: string, file: FormData): Observable<any> {
+    const url = `${this.baseUrl}/spring-boot-code-questions`;
+    const payload = { name, file };
+    return this.http.post(url, payload);
+  }
   // Method to get the count of code questions by topic and subject
   getCodeQuestionsSubjectsTopics(): Observable<any> {
     const url = `${this.baseUrl}/codequestions/subjects-topics`;

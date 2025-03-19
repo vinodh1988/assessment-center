@@ -50,6 +50,7 @@ import { CreateCodeAssessmentComponent } from './subject-matter-home/create-code
 import { AssessmentsListComponent } from './code-assessments-home/assessments-list/assessments-list.component';
 import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-assessment-details/code-assessment-details.component';
 import { SpringBootAssessmentsComponent } from './spring-boot-assessments/spring-boot-assessments.component';
+import { AddQuestionModalComponent } from './spring-boot-assessments/add-question-modal/add-question-modal.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { SpringBootAssessmentsComponent } from './spring-boot-assessments/spring
     CreateCodeAssessmentComponent,
     AssessmentsListComponent,
     CodeAssessmentDetailsComponent,
-    SpringBootAssessmentsComponent
+    SpringBootAssessmentsComponent,
+    AddQuestionModalComponent
    
   ],
   imports: [

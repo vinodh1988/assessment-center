@@ -1,0 +1,19 @@
+<mat-dialog-content>
+    <form [formGroup]="addQuestionForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Question Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter question name">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Upload File</mat-label>
+        <input matInput type="file" (change)="onFileSelected($event)">
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+  </mat-dialog-actions>
+  
