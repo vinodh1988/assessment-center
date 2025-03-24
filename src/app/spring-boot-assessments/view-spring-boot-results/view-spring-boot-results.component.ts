@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AssessmentService } from '../../assessment.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { AssessmentService } from '../../assessment.service';
   styleUrl: './view-spring-boot-results.component.css'
 })
 export class ViewSpringBootResultsComponent {
-  constructor(private assessmentService: AssessmentService) {}
+  constructor(private assessmentService: AssessmentService,private router:Router) {}
 
   assessments: any[] = [];
 
@@ -23,6 +24,6 @@ export class ViewSpringBootResultsComponent {
   }
 
   viewAssessment(assessment){
-    
+    this.router.navigate(['spring-boot-assessments/view-assessment-details'], { state: { assessment } });
   }
 }

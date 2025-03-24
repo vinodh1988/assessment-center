@@ -1,0 +1,46 @@
+.assessment-details, .assessment-results, .test-results {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.assessment-details h2, .assessment-results h2, .test-results h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.assessment-details table, .assessment-results table, .test-results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.assessment-details table td, .assessment-results table th, .assessment-results table td, .test-results table th, .test-results table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.assessment-results table th, .test-results table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.assessment-results table tbody tr:nth-child(even), .test-results table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

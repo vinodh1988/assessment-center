@@ -161,6 +161,18 @@ getSpringBootAssessments(): Observable<any[]> {
     return this.http.get<any>(`${this.baseUrl}/code-assessments/${assessmentCode}`);
   }
  
+  getCompletedSpringBootAssessment(assessmentCode: string): Observable<any> {
+    const url = `${this.baseUrl}/spring-assessments/completed`;
+    return this.http.get<any>(url, {
+      params: { assessmentCode }
+    });
+  }
+
+  updateSpringBootAssessment(assessmentCode: string, updateData: any): Observable<any> {
+    const url = `${this.baseUrl}/spring-assessments/update`;
+    return this.http.put(url, { assessmentCode, ...updateData });
+  }
+  
   downloadExcel(data: any): Observable<Blob> {
     const url = `${this.baseUrl}/downloadExcel`;
     const headers = new HttpHeaders({
