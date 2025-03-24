@@ -28,8 +28,9 @@
     font-weight: bold;
 }
 
-.assessment-results table tbody tr:nth-child(even), .test-results table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+th,tr{
+    background-color: #fbf9f9;
+    border: 2px solid rgb(238, 234, 234);
 }
 
 button {

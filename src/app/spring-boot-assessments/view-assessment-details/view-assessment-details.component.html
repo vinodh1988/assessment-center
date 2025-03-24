@@ -1,73 +1,76 @@
+
 <div class="assessment-details">
-    <h2>Assessment Details</h2>
-    <table>
-        <tr>
-            <td><strong>Assessment Code:</strong></td>
-            <td>{{ assessmentDetails.assessmentcode }}</td>
-        </tr>
-        <tr>
-            <td><strong>Name:</strong></td>
-            <td>{{ assessmentDetails.name }}</td>
-        </tr>
-        <tr>
-            <td><strong>Batch Name:</strong></td>
-            <td>{{ assessmentDetails.batchname }}</td>
-        </tr>
-        <tr>
-            <td><strong>Status:</strong></td>
-            <td>{{ assessmentDetails.status }}</td>
-        </tr>
-        <tr>
-            <td><strong>Assessment Date:</strong></td>
-            <td>{{ assessmentDetails.assessmentdate }}</td>
-        </tr>
-    </table>
-</div>
-
-<div class="assessment-results">
-    <h2>Assessment Results</h2>
-    <table>
-        <thead>
+        <h2>Assessment Details</h2>
+        <table>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Score</th>
-                <th>Actions</th>
+                <td><strong>Assessment Code:</strong></td>
+                <td>{{ assessmentDetails.assessmentcode }}</td>
             </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let result of assessmentResults">
-                <td>{{ result.name }}</td>
-                <td>{{ result.email }}</td>
-                <td>{{ result.phone }}</td>
-                <td>{{ result.score }}</td>
-                <td>
-                    <button (click)="toggleResults()">View Test Results</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div *ngIf="showResults" class="test-results">
-    <h2>Test Results</h2>
-    <table>
-        <thead>
             <tr>
-                <th>Question</th>
-                <th>Answer</th>
-                <th>Correct Answer</th>
-                <th>Score</th>
+                <td><strong>Name:</strong></td>
+                <td>{{ assessmentDetails.name }}</td>
             </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let testResult of assessmentResults">
-                <td>{{ testResult.question }}</td>
-                <td>{{ testResult.answer }}</td>
-                <td>{{ testResult.correctAnswer }}</td>
-                <td>{{ testResult.score }}</td>
+            <tr>
+                <td><strong>Batch Name:</strong></td>
+                <td>{{ assessmentDetails.batchname }}</td>
             </tr>
-        </tbody>
-    </table>
-</div>
+            <tr>
+                <td><strong>Status:</strong></td>
+                <td>{{ assessmentDetails.status }}</td>
+            </tr>
+            <tr>
+                <td><strong>Assessment Date:</strong></td>
+                <td>{{ assessmentDetails.assessmentdate }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="assessment-results"  style="background-color: #eeebeb;">
+        <h2>Assessment Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Score</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let result of assessmentResults">
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.email }}</td>
+                    <td>{{ result.phone }}</td>
+                    <td>{{ result.score }}</td>
+                    <td>
+                        <button (click)="toggleResults(result)">View Test Results</button>
+                         
+    <div *ngIf="showResults" class="test-results-modal">
+        <div class="test-results-content">
+            <span class="close-button" (click)="toggleResults(selectedResult)">&times;</span>
+            <h2>Test Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>Status</th>
+                        <th>Test Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let test of selectedResult.testresults">
+                        <td>{{ test.endpoint }}</td>
+                        <td>{{ test.status }}</td>
+                        <td>{{ test.testCase }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
