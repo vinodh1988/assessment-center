@@ -52,6 +52,7 @@ import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-ass
 import { SpringBootAssessmentsComponent } from './spring-boot-assessments/spring-boot-assessments.component';
 import { AddQuestionModalComponent } from './spring-boot-assessments/add-question-modal/add-question-modal.component';
 import { CreateAssessmentModalComponent } from './spring-boot-assessments/create-assessment-modal/create-assessment-modal.component';
+import { ViewSpringBootResultsComponent } from './spring-boot-assessments/view-spring-boot-results/view-spring-boot-results.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { CreateAssessmentModalComponent } from './spring-boot-assessments/create
     CodeAssessmentDetailsComponent,
     SpringBootAssessmentsComponent,
     AddQuestionModalComponent,
-    CreateAssessmentModalComponent
+    CreateAssessmentModalComponent,
+    ViewSpringBootResultsComponent
    
   ],
   imports: [

@@ -1,0 +1,20 @@
+
+<div class="container">
+    <h2>Spring Boot Assessments</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Batch Name</th>
+                <th>View Assessment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let assessment of assessments">
+                <td>{{ assessment.name }}</td>
+                <td>{{ assessment.batchname }}</td>
+                <td><button class="btn btn-primary" (click)="viewAssessment(assessment)">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

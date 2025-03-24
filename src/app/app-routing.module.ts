@@ -31,6 +31,7 @@ import { CodeAssessmentQuestionsComponent } from './subject-matter-home/code-ass
 import { AssessmentsListComponent } from './code-assessments-home/assessments-list/assessments-list.component';
 import { CodeAssessmentDetailsComponent } from './code-assessments-home/code-assessment-details/code-assessment-details.component';
 import { SpringBootAssessmentsComponent } from './spring-boot-assessments/spring-boot-assessments.component';
+import { ViewSpringBootResultsComponent } from './spring-boot-assessments/view-spring-boot-results/view-spring-boot-results.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'code-assessments',component: AssessmentsListComponent, canActivate: [AuthGuard] },
   { path: 'code-assessment-details/:assessmentcode', component: CodeAssessmentDetailsComponent, canActivate: [AuthGuard] },
   { path: 'sprint-boot-assessments',component: SpringBootAssessmentsComponent,canActivate:[AuthGuard]},
+  { path: 'spring-boot-assessments/view-results',component: ViewSpringBootResultsComponent,canActivate:[AuthGuard]},
   { path: '**', component: NotFoundComponent }
 ];
 @NgModule({
