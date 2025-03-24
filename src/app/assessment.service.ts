@@ -161,10 +161,10 @@ getSpringBootAssessments(): Observable<any[]> {
     return this.http.get<any>(`${this.baseUrl}/code-assessments/${assessmentCode}`);
   }
  
-  getCompletedSpringBootAssessment(assessmentCode: string): Observable<any> {
+  getCompletedSpringBootAssessment(assessmentcode: string): Observable<any> {
     const url = `${this.baseUrl}/spring-assessments/completed`;
     return this.http.get<any>(url, {
-      params: { assessmentCode }
+      params: { assessmentcode }
     });
   }
 
